@@ -3,7 +3,7 @@ syntax on
 set encoding=utf-8
 
 set exrc
-set guicursor=
+"set guicursor=
 "set relativenumber
 set nu
 set nohlsearch
