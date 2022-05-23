@@ -69,6 +69,7 @@ noremap <leader>vs :vsp
 noremap <leader>hs :sp
 " Terminal
 noremap <leader>ts :sp<bar>term<cr><c-w>J:resize 10<cr>
+" Ctrl + \  and  Ctrl + n  to go to normal mode
 " Moving between splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -76,10 +77,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
-
-" terminal
-noremap <leader>vt :vsp terminal
-noremap <leader>ht :sp terminal
 
 " Saving/Quitting
 noremap <leader>q :q
