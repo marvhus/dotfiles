@@ -4,7 +4,7 @@ set encoding=utf-8
 
 set exrc
 set guicursor=
-set relativenumber
+"set relativenumber
 set nu
 set nohlsearch
 set hidden
@@ -67,6 +67,8 @@ noremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
 " WM stuff
 noremap <leader>vs :vsp
 noremap <leader>hs :sp
+" Terminal
+noremap <leader>ts :sp<bar>term<cr><c-w>J:resize 10<cr>
 " Moving between splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
