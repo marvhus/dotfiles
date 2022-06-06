@@ -34,7 +34,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 
 ### Get my [Neovim config](https://github.com/marvhus/dotfiles/blob/dev/init.vim)
-
+(or my [2nd config]([https://github.com/marvhus/dotfiles/blob/dev/.vimrc](https://raw.githubusercontent.com/marvhus/dotfiles/dev/.vimrc)), remember to rename it to ìnit.vim`. Note: this has other keybinds than the first one mentioned, and I'm not yet verry familiar with them, so you'll have to read through them yourself)
 - Make directory for it to be in
 ```bash
 mkdir ~/.config/nvim -p
