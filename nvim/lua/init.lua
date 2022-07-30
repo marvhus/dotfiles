@@ -1,5 +1,3 @@
--- original by: https://github.com/mathletedev/dotfiles/blob/main/.config/nvim/init.lua
-
 local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -112,6 +110,7 @@ vim.cmd "sign define DiagnosticSignHint text=● texthl=DiagnosticSignHint"
 
 vim.diagnostic.config { virtual_text = false }
 
+
 require("presence"):setup {
 	neovim_image_text = "Neovim",
 	presence_log_level = "error",
@@ -120,6 +119,7 @@ require("presence"):setup {
 	presence_reading_text = "Reading  « %s »",
 	presence_workspace_text = "Working on « %s »",
 }
+
 
 vim.g.catppuccin_flavour = "mocha"
 vim.cmd "colorscheme catppuccin"
@@ -276,7 +276,7 @@ require("gitsigns").setup {
 	},
 }
 
-local cp = require("catppuccin.core.palettes.init").get_palette()
+local cp = require("catppuccin.palettes.init").get_palette()
 local custom_catppuccin = require "lualine.themes.catppuccin"
 custom_catppuccin.normal.b.bg = cp.surface0
 custom_catppuccin.normal.c.bg = cp.base
@@ -363,3 +363,4 @@ require("nvim-autopairs").setup {}
 
 require("lsp_lines").setup {}
 vim.keymap.set("n", "<Leader>x", require("lsp_lines").toggle)
+
