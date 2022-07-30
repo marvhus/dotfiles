@@ -44,6 +44,7 @@ vim.o.lazyredraw = true
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.shiftwidth = 2
+vim.o.cursorline = true
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.tabstop = 2
