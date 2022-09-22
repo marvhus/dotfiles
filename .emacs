@@ -9,7 +9,6 @@
 ;; Packages
 ;;
 
-
 ;; auto-complate
 ;;(ac-config-default)
 ;;(auto-complete-mode)
@@ -21,7 +20,8 @@
 ;; lsp-mode
 (setq lsp-keymap-prefix "C-c l")
 (require 'lsp-mode)
-(add-hook 'XXX-mode-hook #'lsp)
+;(require 'lsp-clients)
+(add-hook 'prog-mode-hook #'lsp)
 
 ;; company
 (add-hook 'after-init-hook 'global-company-mode)
@@ -29,6 +29,10 @@
 ;;
 ;; Settings
 ;;
+
+;; server
+;(load "server")
+;(unless (server-running-p) (server-start))
 
 ;; Modes dir
 (add-to-list 'load-path "~/.emacs.d/modes/")
@@ -46,16 +50,30 @@
 ;; move line down
 (defun move-line-down ()
   (interactive)
-  (next-line 1)
+  (next-line 1:)
   (transpose-lines 1)
   (previous-line 1))
 
 ;; Keybinds
 (global-set-key [M-up] 'move-line-up)
 (global-set-key [M-down] 'move-line-down)
+
 (global-set-key [C-return] 'save-buffer)
-(global-set-key [C-c r] 'recompile)
-(global-set-key [C-c c] 'compile)
+
+(global-set-key (kbd "C-c r") 'recompile)
+(global-set-key (kbd "C-c c") 'compile)
+
+(global-set-key [C-w v] 'split-window-right)
+(global-set-key [C-w s] 'split-window-below)
+(global-set-key [C-w q] 'delete-window)
+
+(global-set-key (kbd "<C-up>") 'shrink-window)
+(global-set-key (kbd "<C-down>") 'enlarge-window)
+(global-set-key (kbd "<C-left>") 'shrink-window-horizontally)
+(global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
+
+(define-key evil-normal-state-map (kbd "u") 'undo-fu-only-undo)
+(define-key evil-normal-state-map (kbd "C-r") 'undo-fu-only-redo)
 
 ;; Scrolling and tab width
 (setq-default tab-width 4)
@@ -88,11 +106,13 @@
  '(font-lock-variable-name-face ((((class color) (background dark)) (:foreground "white"))))
  '(font-lock-warning-face ((t (:bold t foreground "red"))))
  '(highlight ((t (:foreground "navy blue" :background "darkseagreen2"))))
+ '(line-number-current-line ((t (:inherit line-number :foreground "yellow"))))
  '(mode-line ((t (:inverse-video t))))
  '(region ((t (:background "blue"))))
  '(widget-field-face ((t (:foreground "white" :background "darkgray"))) t)
  '(widget-single-line-field-face ((t (:background "darkgray"))) t)
- '(line-number-current-line ((t (:inherit line-number :foreground "yellow"))))
+ '(header-line ((t (:foreground "yellow" :backround "gray8"))) t)
+ '(header-line-highlight ((t (:foreground "yellow" :backround "gray32"))) t)
 )
 
 (global-font-lock-mode 1)
@@ -128,4 +148,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(dap-mode lsp-ivy helm-lsp company lsp-treemacs flycheck lsp-ui lsp-mode auto-complete evil)))
+   '(undo-fu undo-tree dap-mode lsp-ivy helm-lsp company lsp-treemacs flycheck lsp-ui lsp-mode auto-complete evil))
+ '(warning-suppress-types '((lsp-mode))))
