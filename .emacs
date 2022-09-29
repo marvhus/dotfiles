@@ -30,6 +30,9 @@
 ;; Settings
 ;;
 
+
+(setq backup-directory-alist `(("." . "~/.saves")))
+
 ;; server
 ;(load "server")
 ;(unless (server-running-p) (server-start))
@@ -74,6 +77,12 @@
 
 (define-key evil-normal-state-map (kbd "u") 'undo-fu-only-undo)
 (define-key evil-normal-state-map (kbd "C-r") 'undo-fu-only-redo)
+;; zoom in/out like we do everywhere else.
+
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
+(global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
 
 ;; Scrolling and tab width
 (setq-default tab-width 4)
