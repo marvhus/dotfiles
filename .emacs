@@ -1,9 +1,9 @@
 ;; Set up package.el to work with MELPA
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
-(package-refresh-contents)
+;;(require 'package)
+;;(add-to-list 'package-archives
+;;             '("melpa" . "https://melpa.org/packages/"))
+;;(package-initialize)
+;;(package-refresh-contents)
 
 ;;
 ;; Packages
@@ -29,7 +29,8 @@
 ;;
 ;; Settings
 ;;
-
+(setq org-image-actual-width nil)
+(setq calendar-week-start-day 1)
 
 (setq backup-directory-alist `(("." . "~/.saves")))
 
@@ -114,15 +115,14 @@
  '(font-lock-string-face ((t (:foreground "gray160" :background "gray16"))))
  '(font-lock-variable-name-face ((((class color) (background dark)) (:foreground "white"))))
  '(font-lock-warning-face ((t (:bold t foreground "red"))))
+ '(header-line ((t (:foreground "yellow" :backround "gray8"))))
+ '(header-line-highlight ((t (:foreground "yellow" :backround "gray32"))))
  '(highlight ((t (:foreground "navy blue" :background "darkseagreen2"))))
  '(line-number-current-line ((t (:inherit line-number :foreground "yellow"))))
  '(mode-line ((t (:inverse-video t))))
  '(region ((t (:background "blue"))))
  '(widget-field-face ((t (:foreground "white" :background "darkgray"))) t)
- '(widget-single-line-field-face ((t (:background "darkgray"))) t)
- '(header-line ((t (:foreground "yellow" :backround "gray8"))) t)
- '(header-line-highlight ((t (:foreground "yellow" :backround "gray32"))) t)
-)
+ '(widget-single-line-field-face ((t (:background "darkgray"))) t))
 
 (global-font-lock-mode 1)
 (set-cursor-color "lightgreen")
@@ -157,5 +157,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(undo-fu undo-tree dap-mode lsp-ivy helm-lsp company lsp-treemacs flycheck lsp-ui lsp-mode auto-complete evil))
+   '(rust-mode undo-fu undo-tree dap-mode lsp-ivy helm-lsp company lsp-treemacs flycheck lsp-ui lsp-mode auto-complete evil))
  '(warning-suppress-types '((lsp-mode))))
