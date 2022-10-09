@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ $1 = "-h" ] || [ $1 = "--help" ] || [ -z "$1" ]; then
+	echo "\$1 - pr number, e.g. 9"
+	echo "\$2 - folder name, e.g. new-feature"
+else
+	git fetch origin pull/$1/head
+	git worktree add $2 FETCH_HEAD
+fi
