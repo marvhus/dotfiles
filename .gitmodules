@@ -1,3 +1,6 @@
 [submodule "nvim/lua/packer.nvim"]
 	path = nvim/lua/packer.nvim
 	url = https://github.com/wbthomason/packer.nvim
+[submodule ".emacs.d"]
+	path = .emacs.d
+	url = git@github.com:marvhus/dot-emacs.git
