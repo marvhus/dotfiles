@@ -87,8 +87,8 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-c C-c x") 'execute-extended-command)
 
-(define-key evil-normal-state-map (kbd "C-u") 'undo-fu-only-undo)
-(define-key evil-normal-state-map (kbd "C-r") 'undo-fu-only-redo)
+(global-set-key (kbd "C-c u") 'undo-fu-only-undo)
+(global-set-key (kbd "C-c y") 'undo-fu-only-redo)
 
 ;;; Emacs stuff --- dont touch
 (custom-set-variables
