@@ -4,6 +4,10 @@
 ;(package-initialize)
 ;(package-refresh-contents)
 
+;; set type of line numbering (global variable)
+(setq-default display-line-numbers 'relative
+			  display-line-numbers-current-absolute t)
+
 ;; Set Font
 (set-face-attribute 'default nil :font "Hack 13")
 
@@ -12,7 +16,7 @@
 
 ;; evil
 (require 'evil)
-(evil-mode 1)
+;(evil-mode 1)
 
 ;; lsp
 (setq lsp-keymap-prefix "C-c l")
@@ -50,13 +54,7 @@
 ;; C stuff
 (setq-default c-basic-offset 4)
 
-;; set type of line numbering (global variable)
-(setq display-line-numbers-type 'relative) 
-
 (setq split-width-threshold nil)
-
-;; activate line numbering in all buffers/modes
-(global-display-line-numbers-mode) 
 
 ;; Add stuff to path
 (exec-path-from-shell-initialize)
@@ -89,7 +87,7 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-c C-c x") 'execute-extended-command)
 
-(define-key evil-normal-state-map (kbd "u") 'undo-fu-only-undo)
+(define-key evil-normal-state-map (kbd "C-u") 'undo-fu-only-undo)
 (define-key evil-normal-state-map (kbd "C-r") 'undo-fu-only-redo)
 
 ;;; Emacs stuff --- dont touch
@@ -98,8 +96,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("bddf21b7face8adffc42c32a8223c3cc83b5c1bbd4ce49a5743ce528ca4da2b6" default))
  '(package-selected-packages
-   '(haskell-mode flycheck magit dap-mode undo-fu rust-mode company lsp-mode drag-stuff exec-path-from-shell gruber-darker-theme evil ivy smex)))
+   '(lsp-jedi v-mode haskell-mode flycheck magit dap-mode undo-fu rust-mode company lsp-mode drag-stuff exec-path-from-shell gruber-darker-theme evil ivy smex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
