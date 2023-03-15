@@ -9,7 +9,7 @@
 			  display-line-numbers-current-absolute t)
 
 ;; Set Font
-(set-face-attribute 'default nil :font "Hack 13")
+(set-face-attribute 'default nil :font "Hack 14")
 
 ;; Hide Tool Bar
 (tool-bar-mode -1)
@@ -95,7 +95,8 @@
 (global-set-key [C-return] 'save-buffer)
 
 ;(set-face-attribute 'default nil :font "Anonymous Pro-14")
-(set-face-attribute 'default nil :font "Hack-14")
+;(set-face-attribute 'default nil :font "Hack-14")
+; Set higher up
 
 (set-face-foreground 'font-lock-builtin-face         "lightgreen")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -126,6 +127,24 @@
 (global-set-key (kbd "C-c C-u") 'undo-fu-only-undo)
 (global-set-key (kbd "C-c C-y") 'undo-fu-only-redo)
 
+;; Do What I mean
+(global-set-key (kbd "C-M-j") 'mc/mark-all-dwim)
+
+;; Edit lines
+(global-set-key (kbd "C-M-c") 'mc/edit-lines)
+
+;; Mark
+(global-set-key (kbd "C-M-,") 'mc/mark-previous-like-this) 
+(global-set-key (kbd "C-M-.") 'mc/mark-next-like-this) 
+
+;; Unmark
+(global-set-key (kbd "C-M-n") 'mc/unmark-previous-like-this) 
+(global-set-key (kbd "C-M-m") 'mc/unmark-next-like-this) 
+
+;;; Skip
+(global-set-key (kbd "C-M-<") 'mc/skip-to-previous-like-this)
+(global-set-key (kbd "C-M->") 'mc/skip-to-next-like-this)
+
 ;;; Emacs stuff --- dont touch
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -135,7 +154,7 @@
  '(custom-safe-themes
    '("bddf21b7face8adffc42c32a8223c3cc83b5c1bbd4ce49a5743ce528ca4da2b6" default))
  '(package-selected-packages
-   '(lsp-jedi v-mode haskell-mode flycheck magit dap-mode undo-fu rust-mode company lsp-mode drag-stuff exec-path-from-shell gruber-darker-theme evil ivy smex)))
+   '(multiple-cursors lsp-jedi v-mode haskell-mode flycheck magit dap-mode undo-fu rust-mode company lsp-mode drag-stuff exec-path-from-shell gruber-darker-theme evil ivy smex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
