@@ -62,7 +62,43 @@
 ;; Set Theme
 ;(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/gruber-darker-theme-20221122.1143")
 ;(load-theme 'gruber-darker t)
-(load-theme 'adwaita t)
+;(load-theme 'adwaita t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(default ((t (:foreground "#d3b58d" :background "#041818"))))
+ '(custom-group-tag-face ((t (:underline t :foreground "lightblue"))) t)
+ '(custom-variable-tag-face ((t (:underline t :foreground "lightblue"))) t)
+ '(font-lock-builtin-face ((t nil)))
+ ; '(font-lock-comment-face ((t (:foreground "yellow"))))
+ '(font-lock-comment-face ((t (:foreground "#3fdflf"))))
+ '(font-lock-function-name-face ((((class color) (background dark)) (:foreground "white")))) 
+ '(font-lock-keyword-face ((t (:foreground "white" ))))
+ ; '(font-lock-string-face ((t (:foreground "gray160" :background "gray16"))))
+ '(font-lock-string-face ((t (:foreground "#0fdfaf"))))
+ '(font-lock-variable-name-face ((((class color) (background dark)) (:foreground "#c8d4ec"))))  
+; '(font-lock-warning-face ((t (:foreground "#695a46"))))
+ '(font-lock-warning-face ((t (:foreground "#504038"))))
+ '(highlight ((t (:foreground "navyblue" :background "darkseagreen2"))))
+ '(mode-line ((t (:inverse-video t))))
+ '(region ((t (:background "blue"))))
+ '(widget-field-face ((t (:foreground "white"))) t)
+ '(widget-single-line-field-face ((t (:background "darkgray"))) t))
+
+(global-font-lock-mode 1)
+(set-cursor-color "lightgreen")
+(set-background-color "#072626")
+(global-set-key [C-return] 'save-buffer)
+
+;(set-face-attribute 'default nil :font "Anonymous Pro-14")
+(set-face-attribute 'default nil :font "Hack-14")
+
+(set-face-foreground 'font-lock-builtin-face         "lightgreen")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; Keybinds
 (global-set-key (kbd "<C-return>") 'save-buffer)
@@ -70,9 +106,9 @@
 (global-set-key (kbd "C-c r") 'recompile)
 (global-set-key (kbd "C-c c") 'compile)
 
-(global-set-key [C-w v] 'split-window-right)
-(global-set-key [C-w s] 'split-window-below)
-(global-set-key [C-w q] 'delete-window)
+(global-set-key (kbd "C-c v") 'split-window-right)
+(global-set-key (kbd "C-c s") 'split-window-below)
+(global-set-key (kbd "C-c q") 'delete-window)
 
 (global-set-key (kbd "<C-up>")		'shrink-window)
 (global-set-key (kbd "<C-down>")	'enlarge-window)
@@ -87,8 +123,8 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-c C-c x") 'execute-extended-command)
 
-(global-set-key (kbd "C-c u") 'undo-fu-only-undo)
-(global-set-key (kbd "C-c y") 'undo-fu-only-redo)
+(global-set-key (kbd "C-c C-u") 'undo-fu-only-undo)
+(global-set-key (kbd "C-c C-y") 'undo-fu-only-redo)
 
 ;;; Emacs stuff --- dont touch
 (custom-set-variables
