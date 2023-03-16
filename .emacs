@@ -57,7 +57,7 @@
 (setq split-width-threshold nil)
 
 ;; Add stuff to path
-(exec-path-from-shell-initialize)
+;(exec-path-from-shell-initialize)
 
 ;; Set Theme
 ;(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/gruber-darker-theme-20221122.1143")
@@ -66,22 +66,19 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(default ((t (:foreground "#d3b58d" :background "#041818"))))
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:foreground "#D3B58D" :background "#041818"))))
  '(custom-group-tag-face ((t (:underline t :foreground "lightblue"))) t)
  '(custom-variable-tag-face ((t (:underline t :foreground "lightblue"))) t)
  '(font-lock-builtin-face ((t nil)))
- ; '(font-lock-comment-face ((t (:foreground "yellow"))))
- '(font-lock-comment-face ((t (:foreground "#3fdf1f"))))
- '(font-lock-function-name-face ((((class color) (background dark)) (:foreground "white")))) 
- '(font-lock-keyword-face ((t (:foreground "white" ))))
- ; '(font-lock-string-face ((t (:foreground "gray160" :background "gray16"))))
- '(font-lock-string-face ((t (:foreground "#0fdfaf"))))
- '(font-lock-variable-name-face ((((class color) (background dark)) (:foreground "#c8d4ec"))))  
-; '(font-lock-warning-face ((t (:foreground "#695a46"))))
+ '(font-lock-comment-face ((t (:foreground "#3FDF1F"))))
+ '(font-lock-function-name-face ((((class color) (background dark)) (:foreground "white"))))
+ '(font-lock-keyword-face ((t (:foreground "white"))))
+ '(font-lock-string-face ((t (:foreground "#0FDFAF"))))
+ '(font-lock-variable-name-face ((((class color) (background dark)) (:foreground "#C8D4EC"))))
  '(font-lock-warning-face ((t (:foreground "#504038"))))
  '(highlight ((t (:foreground "navyblue" :background "darkseagreen2"))))
  '(mode-line ((t (:inverse-video t))))
@@ -155,9 +152,4 @@
    '("bddf21b7face8adffc42c32a8223c3cc83b5c1bbd4ce49a5743ce528ca4da2b6" default))
  '(package-selected-packages
    '(multiple-cursors lsp-jedi v-mode haskell-mode flycheck magit dap-mode undo-fu rust-mode company lsp-mode drag-stuff exec-path-from-shell gruber-darker-theme evil ivy smex)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
