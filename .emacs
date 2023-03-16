@@ -75,7 +75,7 @@
  '(custom-variable-tag-face ((t (:underline t :foreground "lightblue"))) t)
  '(font-lock-builtin-face ((t nil)))
  ; '(font-lock-comment-face ((t (:foreground "yellow"))))
- '(font-lock-comment-face ((t (:foreground "#3fdflf"))))
+ '(font-lock-comment-face ((t (:foreground "#3fdf1f"))))
  '(font-lock-function-name-face ((((class color) (background dark)) (:foreground "white")))) 
  '(font-lock-keyword-face ((t (:foreground "white" ))))
  ; '(font-lock-string-face ((t (:foreground "gray160" :background "gray16"))))
